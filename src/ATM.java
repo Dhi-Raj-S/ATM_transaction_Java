@@ -128,10 +128,10 @@ public class ATM {
             System.out.printf("Enter the number (1-%d) of the account\n" +
                     "whose transactions you want to see: ", theUser.numAccounts());
             theAcct = sc.nextInt()-1;
-            if (theAcct < 0 || theAcct > theUser.numAccounts()) {
+            if (theAcct < 0 || theAcct >= theUser.numAccounts()) {
                 System.out.println("Invalid Account. Please try again. ");
             }
-        } while (theAcct < 0 || theAcct > theUser.numAccounts());
+        } while (theAcct < 0 || theAcct >= theUser.numAccounts());
 
         // print the transaction history
         theUser.printAcctTransHistory(theAcct);
@@ -185,7 +185,7 @@ public class ATM {
         theUser.addAccountTransaction(fromAcct, -1*amount,
                 String.format("Transfer to account %s", theUser.getAcctUUID(toAcct)));
         theUser.addAccountTransaction(toAcct, amount,
-                String.format("Transfer to account %s", theUser.getAcctUUID(fromAcct)));
+                String.format("Transfer from account %s", theUser.getAcctUUID(fromAcct)));
     }
 
     /**
