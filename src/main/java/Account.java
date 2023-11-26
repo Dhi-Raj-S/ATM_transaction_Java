@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Account {
-    private String name; // The name of the account
+    private String name; // The account name
 
     private String uuid; // The account ID number
 
